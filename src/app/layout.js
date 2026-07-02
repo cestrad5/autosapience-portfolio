@@ -14,15 +14,33 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Camilo Estrada | Ingeniero de Producto & Automatización B2B",
+  title: "AutoSapience — El cerebro digital de tu fábrica",
   description:
-    "AutoSapience — Portafolio de Camilo Estrada. Soluciones de software e inteligencia operativa para empresas tradicionales en Latinoamérica.",
+    "Automatización con IA para empresas de manufactura y producción. Software modular y SaaS accesible para MiPyMEs colombianas que quieren operar con precisión — sin contratar un departamento de IT.",
+  metadataBase: new URL("https://autosapience.com"),
   openGraph: {
-    title: "Camilo Estrada | Ingeniero de Producto & Automatización B2B",
+    title: "AutoSapience — El cerebro digital de tu fábrica",
     description:
-      "Construyo motores de automatización e inteligencia operativa para Pymes. Mira mis casos de estudio y proyectos.",
+      "Automatización con IA para empresas de manufactura y producción en Colombia. Pedidos B2B, órdenes de producción, costeo inteligente y más.",
     type: "website",
+    url: "https://autosapience.com",
+    siteName: "AutoSapience",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "AutoSapience — El cerebro digital de tu fábrica",
+    description:
+      "Software modular con IA para MiPyMEs manufactureras en Colombia.",
+  },
+  keywords: [
+    "automatización manufactura Colombia",
+    "software MiPyME",
+    "SaaS industria colombiana",
+    "IA para fábricas",
+    "gestión producción",
+    "pedidos B2B",
+    "costeo productos manufactura",
+  ],
 };
 
 export default function RootLayout({ children }) {
