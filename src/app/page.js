@@ -162,15 +162,19 @@ export default async function Home() {
       >
         <div className="max-w-6xl mx-auto px-5 sm:px-8 py-3 flex justify-between items-center">
           {/* Logo */}
-          <a href="/" aria-label="AutoSapience inicio">
+          <a href="/" aria-label="AutoSapience inicio" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
             <Image
-              src="/logo.png"
-              alt="AutoSapience logo"
-              width={180}
-              height={44}
+              src="/logo-icon.png"
+              alt="AutoSapience Icon"
+              width={32}
+              height={32}
               priority
-              style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
+              style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
             />
+            <span className="text-xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+              <span className="text-[#f5f0e8]">Auto</span>
+              <span className="text-[#f59e0b]">Sapience</span>
+            </span>
           </a>
 
           {/* Nav */}
@@ -827,13 +831,19 @@ export default async function Home() {
           <div className="grid sm:grid-cols-3 gap-8 mb-8">
             {/* Brand */}
             <div className="space-y-3">
-              <Image
-                src="/logo.png"
-                alt="AutoSapience"
-                width={160}
-                height={40}
-                style={{ height: '30px', width: 'auto', objectFit: 'contain' }}
-              />
+              <a href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+                <Image
+                  src="/logo-icon.png"
+                  alt="AutoSapience Icon"
+                  width={28}
+                  height={28}
+                  style={{ height: '28px', width: 'auto', objectFit: 'contain' }}
+                />
+                <span className="text-lg font-bold tracking-tight" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                  <span className="text-[#f5f0e8]">Auto</span>
+                  <span className="text-[#f59e0b]">Sapience</span>
+                </span>
+              </a>
               <p className="text-xs text-[#9a8c72] leading-relaxed max-w-[220px]">
                 El cerebro digital de tu fábrica. IA y automatización para MiPyMEs colombianas.
               </p>
