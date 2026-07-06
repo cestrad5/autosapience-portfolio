@@ -563,12 +563,16 @@ export default async function Home() {
                 </p>
 
                 <form
-                  action="mailto:cestrad5@gmail.com"
-                  method="post"
-                  encType="text/plain"
+                  action="https://formsubmit.co/cestrad5@gmail.com"
+                  method="POST"
                   className="space-y-3"
                   aria-label="Formulario de solicitud de piloto"
                 >
+                  {/* Opciones ocultas para FormSubmit */}
+                  <input type="hidden" name="_subject" value="🚀 Nueva postulación Piloto: AutoSapience!" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="box" />
+                  <input type="hidden" name="_next" value="https://autosapience.com" />
                   <div>
                     <label htmlFor="pilot-name" className="block text-xs text-[#9a8c72] mb-1.5">
                       Tu nombre *
