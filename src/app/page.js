@@ -26,18 +26,18 @@ export const metadata = {
 const pains = [
   {
     icon: AlertTriangle,
-    title: 'Visibilidad cero',
-    body: 'Datos críticos dispersos en WhatsApp, cuadernos y hojas de Excel desconectadas. Nadie sabe en tiempo real qué hay en inventario, qué cuesta fabricar ni cuánto se vendió hoy.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Costos ocultos',
-    body: 'No saben exactamente cuánto cuesta fabricar cada producto cuando se incluyen los CIF, la mano de obra real y las mermas de material. El margen se "come" sin que nadie lo vea.',
+    title: 'Costos ocultos multiplicados',
+    body: 'Un error en el costeo (olvidar un CIF, mermas de material o un proceso) se multiplica por cada unidad fabricada. En volumen, esto destruye tu rentabilidad.',
   },
   {
     icon: AlertTriangle,
-    title: 'Ventas sin control',
-    body: 'El asesor promete en la calle lo que la planta no puede cumplir. Los pedidos viajan por WhatsApp y se pierden, se duplican o se olvidan antes de llegar a producción.',
+    title: 'Visibilidad nula en producción',
+    body: 'Desconoces en qué etapa está cada orden. La comunicación entre ventas y planta es un caos en WhatsApp, generando promesas incumplidas al cliente.',
+  },
+  {
+    icon: AlertTriangle,
+    title: 'Crecimiento estancado',
+    body: 'No puedes escalar tu fábrica porque dependes de procesos manuales. Tomas decisiones basadas en intuición en lugar de datos concretos.',
   },
 ];
 
@@ -48,44 +48,44 @@ const suites = [
     color: '#f59e0b',
     colorBg: 'rgba(245,158,11,0.1)',
     colorBorder: 'rgba(245,158,11,0.2)',
-    tag: 'Suite Operaciones',
-    title: 'El núcleo de tu planta',
+    tag: 'Auditoría y Costeo Dinámico',
+    title: 'El núcleo de tu rentabilidad',
     description:
-      'Digitaliza el corazón manufacturero de tu empresa. Controla costos, produce sin errores y despacha con trazabilidad completa.',
+      'Identifica y corrige fugas de capital en tus procesos. Sistema de costeo inteligente para proteger el margen de cada producto.',
     modules: [
-      'Costeo Inteligente — CIF, mano de obra y materias primas',
+      'Costeo Dinámico — CIF, mano de obra y mermas',
+      'Auditoría de procesos de manufactura',
       'Gestión de Órdenes de Producción',
-      'Control de Despachos y Remisiones',
     ],
   },
   {
-    icon: ShoppingCart,
+    icon: BarChart3,
     color: '#a78bfa',
     colorBg: 'rgba(167,139,250,0.1)',
     colorBorder: 'rgba(167,139,250,0.2)',
-    tag: 'Suite Fuerza Comercial',
-    title: 'Vende más, con más orden',
+    tag: 'Tablero del CEO',
+    title: 'Control total en tiempo real',
     description:
-      'Equipa a tu equipo de ventas con herramientas que convierten cada visita en un pedido limpio, rastreable y sin errores.',
+      'Deja de adivinar. Toma decisiones ejecutivas basadas en métricas reales de producción, inventario y finanzas.',
     modules: [
-      'App de Pedidos en Campo B2B — PDF automático a producción',
-      'E-commerce autogestionable por el cliente',
-      'Registro y gestión de facturas y remisiones',
+      'Métricas en tiempo real (Márgenes, Ventas)',
+      'Trazabilidad completa de inventario y despachos',
+      'Integración de reportes operativos',
     ],
   },
   {
-    icon: Sparkles,
+    icon: AlertTriangle,
     color: '#34d399',
     colorBg: 'rgba(52,211,153,0.1)',
     colorBorder: 'rgba(52,211,153,0.2)',
-    tag: 'Suite Crecimiento Digital',
-    title: 'IA que trabaja por ti',
+    tag: 'App Móvil y Capacitación',
+    title: 'Empodera a tu personal',
     description:
-      'Automatización inteligente para que tu empresa crezca sin aumentar la carga de trabajo. Del producto físico al contenido digital en minutos.',
+      'Alinea a tu equipo con los nuevos sistemas. Implementamos herramientas en planta y capacitamos a tus operarios para que nada falle.',
     modules: [
-      'Generador de contenido con IA — fotos → posts listos',
-      'Copilot de LinkedIn — posicionamiento automatizado',
-      'Control financiero — ingresos y egresos empresariales',
+      'App móvil para seguimiento de operarios',
+      'Capacitación y onboarding del personal',
+      'Soporte y acompañamiento continuo',
     ],
   },
 ];
@@ -219,7 +219,7 @@ export default async function Home() {
               className="text-5xl sm:text-6xl lg:text-7xl leading-[1.04]"
               style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, letterSpacing: '-0.03em', color: '#f5f0e8' }}
             >
-              El cerebro digital<br />
+              Recupera el margen<br />
               <span className="text-gradient-amber">de tu fábrica.</span>
             </h1>
           </div>
@@ -229,13 +229,12 @@ export default async function Home() {
             className="text-lg sm:text-xl max-w-2xl leading-relaxed text-[#9a8c72] animate-fade-up delay-200"
             style={{ fontFamily: 'var(--font-inter)', fontWeight: 400 }}
           >
-            Automatización con IA para empresas de manufactura y producción que quieren operar con precisión —
-            sin contratar un departamento de IT ni pagar un ERP de millones.
+            Deja de perder dinero por errores de costeo que se multiplican en volumen. Implementamos sistemas de control dinámico y tableros de dirección en 8 semanas.
           </p>
 
           {/* ICP chips */}
           <div className="flex flex-wrap gap-2 animate-fade-up delay-300" aria-label="Sectores que atendemos">
-            {['🏭 Manufactura', '🪵 Carpintería y MDF', '🐄 Agro y Ganadería', '📦 Logística', '🛒 Comercio B2B'].map((s) => (
+            {['🏭 Manufactura', '🪵 Carpintería y Muebles', '⚙️ Metalmecánica', '📦 Ensamblaje'].map((s) => (
               <span key={s} className="tech-pill">{s}</span>
             ))}
           </div>
@@ -521,26 +520,24 @@ export default async function Home() {
               <div className="space-y-5">
                 <div>
                   <p className="text-xs uppercase tracking-widest text-[#f59e0b] mb-3" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
-                    Programa piloto — 5 cupos
+                    Diagnóstico Gratuito — Solo 5 cupos al mes
                   </p>
                   <h2
                     className="text-3xl sm:text-4xl"
                     style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 700, letterSpacing: '-0.02em', color: '#f5f0e8' }}
                   >
-                    Sé parte de las primeras 5 empresas piloto
+                    Agenda tu diagnóstico operativo
                   </h2>
                 </div>
                 <p className="text-[#9a8c72] leading-relaxed">
-                  Buscamos empresas manufactureras o de producción que quieran ser pioneras en la
-                  implementación. Las empresas piloto reciben acompañamiento directo de Camilo,
-                  precio preferencial y prioridad en el desarrollo de nuevas funciones.
+                  Buscamos empresas de manufactura listas para escalar. En esta sesión de 30 minutos analizaremos tus procesos actuales y encontraremos las fugas de capital ocultas en tus costos.
                 </p>
                 <ul className="space-y-2">
                   {[
-                    'Diagnóstico operativo gratuito',
-                    'Implementación acompañada en semanas',
-                    'Precio piloto — sin contratos largos',
-                    'Acceso anticipado a nuevos módulos',
+                    'Auditoría rápida de tus procesos actuales',
+                    'Identificación de fugas de capital',
+                    'Ruta clara de implementación en 8 semanas',
+                    'Cotización de sistema High-Ticket',
                   ].map((b) => (
                     <li key={b} className="flex items-center gap-2.5 text-sm text-[#c4b89a]">
                       <CheckCircle2 size={15} style={{ color: '#f59e0b', flexShrink: 0 }} aria-hidden="true" />
@@ -625,6 +622,40 @@ export default async function Home() {
                       className="pilot-input"
                     />
                   </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label htmlFor="pilot-revenue" className="block text-xs text-[#9a8c72] mb-1.5">
+                        Facturación Mensual *
+                      </label>
+                      <select
+                        id="pilot-revenue"
+                        name="facturacion"
+                        required
+                        className="pilot-input text-sm"
+                        style={{ appearance: 'none', backgroundColor: 'rgba(255,255,255,0.03)' }}
+                      >
+                        <option value="" className="bg-[#0a0a12]">Selecciona...</option>
+                        <option value="Menos de $50M" className="bg-[#0a0a12]">Menos de $50M</option>
+                        <option value="$50M - $200M" className="bg-[#0a0a12]">$50M - $200M</option>
+                        <option value="$200M - $500M" className="bg-[#0a0a12]">$200M - $500M</option>
+                        <option value="Más de $500M" className="bg-[#0a0a12]">Más de $500M</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="pilot-employees" className="block text-xs text-[#9a8c72] mb-1.5">
+                        Número de operarios *
+                      </label>
+                      <input
+                        id="pilot-employees"
+                        name="operarios"
+                        type="number"
+                        min="1"
+                        required
+                        placeholder="Ej: 10"
+                        className="pilot-input"
+                      />
+                    </div>
+                  </div>
                   <div>
                     <label htmlFor="pilot-pain" className="block text-xs text-[#9a8c72] mb-1.5">
                       ¿Cuál es tu mayor dolor operativo hoy?
@@ -642,7 +673,7 @@ export default async function Home() {
                     className="btn-primary w-full justify-center mt-2"
                   >
                     <Mail size={15} />
-                    Solicitar mi cupo piloto
+                    Agendar mi diagnóstico
                   </button>
                 </form>
 
