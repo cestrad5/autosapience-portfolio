@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getRecentRepos } from '@/lib/github';
+import PricingSection from '@/components/PricingSection';
 import {
   ExternalLink,
   Mail,
@@ -184,6 +185,9 @@ export default async function Home() {
             </a>
             <a href="#casos" className="hidden sm:block px-3 py-2 text-sm text-[#9a8c72] hover:text-[#f5f0e8] transition-colors">
               Casos
+            </a>
+            <a href="#precios" className="hidden sm:block px-3 py-2 text-sm text-[#9a8c72] hover:text-[#f5f0e8] transition-colors">
+              Planes
             </a>
             <a href="#sobre" className="hidden sm:block px-3 py-2 text-sm text-[#9a8c72] hover:text-[#f5f0e8] transition-colors">
               Sobre nosotros
@@ -496,6 +500,11 @@ export default async function Home() {
             ))}
           </div>
         </section>
+
+        {/* ══════════════════════════════════════════
+            PLANES Y PRECIOS (Wompi + Suscripciones)
+        ══════════════════════════════════════════ */}
+        <PricingSection />
 
         {/* ══════════════════════════════════════════
             CTA PILOTO
