@@ -19,12 +19,10 @@ export default function PricingSection() {
     const isAnnual = billingCycle === "annual";
     const wompiUrl = isAnnual ? tier.annualWompiLink : tier.monthlyWompiLink;
 
-    // Si ya existe el link de Wompi configurado, lo usa directamente
     if (wompiUrl && wompiUrl.trim() !== "") {
       return wompiUrl;
     }
 
-    // Fallback hacia WhatsApp si Wompi está pendiente de validación
     const priceText = formatCurrency(isAnnual ? tier.annualPrice : tier.monthlyPrice);
     const cycleText = isAnnual ? "anual" : "mensual";
     const message = encodeURIComponent(
@@ -35,17 +33,17 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="precios" className="py-24 relative z-10 overflow-hidden">
+    <section id="precios" className="py-20 sm:py-24 relative z-10 overflow-hidden">
       {/* Luz ambiental de fondo */}
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[140px] pointer-events-none opacity-20"
         style={{ background: "radial-gradient(circle, #f59e0b 0%, #3d3d6b 70%, transparent 100%)" }}
       />
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 space-y-10 sm:space-y-12">
         {/* Cabecera de Sección */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#f59e0b]/10 text-[#f59e0b] border border-[#f59e0b]/20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#f59e0b]/10 text-[#f59e0b] border border-[#f59e0b]/20">
             <Zap size={14} />
             Inversión Transparente & Escalable
           </div>
@@ -54,36 +52,45 @@ export default function PricingSection() {
             Planes adaptados al tamaño de tu fábrica
           </h2>
 
-          <p className="text-sm sm:text-base text-[#9a8c72] leading-relaxed">
-            Elige la escala que mejor responda a las necesidades actuales de tu empresa. Cambia de plan o cancela en cualquier momento sin penalizaciones.
+          <p className="text-sm sm:text-base text-[#9a8c72] leading-relaxed max-w-2xl mx-auto">
+            Elige la escala que mejor responda a las necesidades de tu empresa. Cancela o cambia de plan cuando lo requieras.
           </p>
 
-          {/* Toggle Switch Mensual / Anual */}
-          <div className="pt-6 flex items-center justify-center gap-4">
-            <span className={`text-sm font-medium ${billingCycle === "monthly" ? "text-[#f5f0e8]" : "text-[#9a8c72]"}`}>
-              Facturación Mensual
-            </span>
-
-            <button
-              onClick={() => setBillingCycle(billingCycle === "monthly" ? "annual" : "monthly")}
-              className="relative w-16 h-8 rounded-full p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#f59e0b]"
-              style={{ background: billingCycle === "annual" ? "#f59e0b" : "rgba(255,255,255,0.1)" }}
-              aria-label="Alternar ciclo de facturación"
-            >
-              <div
-                className={`w-6 h-6 rounded-full bg-[#0a0a12] shadow-md transform transition-transform duration-300 ${
-                  billingCycle === "annual" ? "translate-x-8" : "translate-x-0"
+          {/* Segmented Control Responsivo (Toggle Mensual / Anual) */}
+          <div className="pt-4 flex justify-center">
+            <div className="bg-[#0a0a12]/90 border border-white/10 p-1 rounded-2xl inline-flex items-center gap-1 shadow-2xl backdrop-blur-md">
+              <button
+                type="button"
+                onClick={() => setBillingCycle("monthly")}
+                className={`px-4 sm:px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                  billingCycle === "monthly"
+                    ? "bg-[#3d3d6b] text-[#f5f0e8] shadow-md border border-white/10"
+                    : "text-[#9a8c72] hover:text-[#f5f0e8]"
                 }`}
-              />
-            </button>
+              >
+                Mensual
+              </button>
 
-            <div className="flex items-center gap-2">
-              <span className={`text-sm font-medium ${billingCycle === "annual" ? "text-[#f5f0e8]" : "text-[#9a8c72]"}`}>
-                Facturación Anual
-              </span>
-              <span className="px-2.5 py-0.5 text-[11px] font-bold rounded-full bg-[#f59e0b] text-[#0a0a12]">
-                ¡Ahorras 2 meses!
-              </span>
+              <button
+                type="button"
+                onClick={() => setBillingCycle("annual")}
+                className={`px-3.5 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
+                  billingCycle === "annual"
+                    ? "bg-[#f59e0b] text-[#0a0a12] shadow-md shadow-[#f59e0b]/20 font-bold"
+                    : "text-[#9a8c72] hover:text-[#f5f0e8]"
+                }`}
+              >
+                <span>Anual</span>
+                <span 
+                  className={`text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-bold transition-colors ${
+                    billingCycle === "annual" 
+                      ? "bg-[#0a0a12] text-[#f59e0b]" 
+                      : "bg-[#f59e0b]/20 text-[#f59e0b]"
+                  }`}
+                >
+                  Ahorras 2 meses
+                </span>
+              </button>
             </div>
           </div>
         </div>
@@ -94,6 +101,7 @@ export default function PricingSection() {
             const price = billingCycle === "annual" ? tier.annualPrice : tier.monthlyPrice;
             const periodText = billingCycle === "annual" ? "/ año" : "/ mes";
             const checkoutUrl = getCheckoutLink(tier);
+            const isWompi = billingCycle === "annual";
 
             return (
               <div
@@ -107,7 +115,7 @@ export default function PricingSection() {
                 {/* Badge de Destaque */}
                 {tier.badge && (
                   <div
-                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase flex items-center gap-1 ${
+                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase flex items-center gap-1 whitespace-nowrap ${
                       tier.popular
                         ? "bg-[#f59e0b] text-[#0a0a12]"
                         : "bg-[#3d3d6b] text-[#f5f0e8] border border-white/10"
@@ -139,7 +147,7 @@ export default function PricingSection() {
                     <span className="text-xs text-[#9a8c72]">{periodText}</span>
                     {billingCycle === "annual" && (
                       <p className="text-[11px] text-[#f59e0b] font-medium mt-1">
-                        Equivalente a 10 meses
+                        Equivalente a 10 meses (2 meses gratis)
                       </p>
                     )}
                   </div>
@@ -156,7 +164,7 @@ export default function PricingSection() {
                 </div>
 
                 {/* Botón de Acción */}
-                <div className="pt-6 mt-6 border-t border-white/5">
+                <div className="pt-6 mt-6 border-t border-white/5 space-y-2">
                   <a
                     href={checkoutUrl}
                     target="_blank"
@@ -167,9 +175,12 @@ export default function PricingSection() {
                         : "btn-secondary w-full"
                     }`}
                   >
-                    <span>Suscribirme ahora</span>
+                    <span>{isWompi ? "Suscribirme (Wompi)" : "Suscribirme (Mercado Pago)"}</span>
                     <ArrowRight size={14} />
                   </a>
+                  <p className="text-[10px] text-center text-[#9a8c72]">
+                    {isWompi ? "Pago anual único vía Wompi" : "Cobro mensual automático vía Mercado Pago"}
+                  </p>
                 </div>
               </div>
             );
@@ -181,7 +192,7 @@ export default function PricingSection() {
           <p className="text-xs text-[#9a8c72]">
             ¿Tienes requerimientos especiales o necesitas parametrización inicial a la medida?{" "}
             <a href="https://wa.me/573127270035?text=Hola,%20quisiera%20cotizar%20un%20proyecto%20de%20implementaci%C3%B3n%20a%20la%20medida" target="_blank" rel="noopener noreferrer" className="text-[#f59e0b] hover:underline font-semibold">
-              Cotiza un plan de implementación personalizada por WhatsApp
+              Cotiza una implementación personalizada por WhatsApp
             </a>
           </p>
         </div>

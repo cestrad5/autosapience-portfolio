@@ -1,5 +1,5 @@
 // Configuración de Planes y Precios — AutoSapience
-// Cuando Wompi active tu cuenta, simplemente reemplaza los valores de 'wompiLink' por los enlaces reales de Wompi.
+// Enlaces reales: Mercado Pago para recurrencia mensual y Wompi para pagos anuales.
 
 export const PRICING_CONFIG = {
   whatsappNumber: "573127270035",
@@ -17,8 +17,8 @@ export const PRICING_CONFIG = {
         "Actualizaciones continuas de seguridad",
         "Capacitación básica de uso"
       ],
-      monthlyWompiLink: "", // Colocar aquí el link mensual de Wompi cuando esté activo
-      annualWompiLink: "",  // Colocar aquí el link anual de Wompi cuando esté activo
+      monthlyWompiLink: "https://mpago.la/2DmMv2H", // Mercado Pago Suscripción
+      annualWompiLink: "https://checkout.wompi.co/l/V870eO",  // Wompi Anual
     },
     {
       id: "tier-2",
@@ -33,8 +33,8 @@ export const PRICING_CONFIG = {
         "Integración básica de datos",
         "Reportes y métricas operativas"
       ],
-      monthlyWompiLink: "",
-      annualWompiLink: "",
+      monthlyWompiLink: "https://mpago.la/33sjnQg", // Mercado Pago Suscripción
+      annualWompiLink: "https://checkout.wompi.co/l/C5xWrR",  // Wompi Anual
     },
     {
       id: "tier-3",
@@ -50,8 +50,8 @@ export const PRICING_CONFIG = {
         "Soporte prioritario 24/7",
         "Acompañamiento en implementación"
       ],
-      monthlyWompiLink: "",
-      annualWompiLink: "",
+      monthlyWompiLink: "https://mpago.la/25dZwh2", // Mercado Pago Suscripción
+      annualWompiLink: "https://checkout.wompi.co/l/hjpTyW",  // Wompi Anual
     },
     {
       id: "tier-4",
@@ -66,8 +66,8 @@ export const PRICING_CONFIG = {
         "Gerente de cuenta dedicado",
         "SLAs de soporte industrial garantizados"
       ],
-      monthlyWompiLink: "",
-      annualWompiLink: "",
+      monthlyWompiLink: "https://mpago.la/12g8VgD", // Mercado Pago Suscripción
+      annualWompiLink: "https://checkout.wompi.co/l/6Tx5C8",  // Wompi Anual
     },
     {
       id: "tier-5",
@@ -82,8 +82,8 @@ export const PRICING_CONFIG = {
         "Soporte VIP presencial / remoto",
         "Múltiples plantas y sedes unificadas"
       ],
-      monthlyWompiLink: "",
-      annualWompiLink: "",
+      monthlyWompiLink: "https://mpago.la/2HFtsTY", // Mercado Pago Suscripción
+      annualWompiLink: "https://checkout.wompi.co/l/wDgL7q",  // Wompi Anual
     }
   ]
 };
