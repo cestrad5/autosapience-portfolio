@@ -14,32 +14,31 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "AutoSapience — El cerebro digital de tu fábrica",
+  title: "AutoSapience — Automatización de procesos llave en mano para Pymes",
   description:
-    "Automatización con IA para empresas de manufactura y producción. Software modular y SaaS accesible para MiPyMEs colombianas que quieren operar con precisión — sin contratar un departamento de IT.",
+    "Automatizamos los flujos de datos de su empresa. Servicio llave en mano de automatización con IA para Pymes y firmas contables en Colombia: cero digitación manual, información en tiempo real y sin departamento de TI.",
   metadataBase: new URL("https://autosapience.com"),
   openGraph: {
-    title: "AutoSapience — El cerebro digital de tu fábrica",
+    title: "AutoSapience — Automatización de procesos llave en mano para Pymes",
     description:
-      "Automatización con IA para empresas de manufactura y producción en Colombia. Pedidos B2B, órdenes de producción, costeo inteligente y más.",
+      "Automatización con IA para Pymes y firmas contables en Colombia. Cero digitación manual, información en tiempo real y sin departamento de TI.",
     type: "website",
     url: "https://autosapience.com",
     siteName: "AutoSapience",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AutoSapience — El cerebro digital de tu fábrica",
+    title: "AutoSapience — Automatización de procesos llave en mano para Pymes",
     description:
-      "Software modular con IA para MiPyMEs manufactureras en Colombia.",
+      "Automatización de procesos con IA, llave en mano, para Pymes colombianas.",
   },
   keywords: [
-    "automatización manufactura Colombia",
-    "software MiPyME",
-    "SaaS industria colombiana",
-    "IA para fábricas",
-    "gestión producción",
-    "pedidos B2B",
-    "costeo productos manufactura",
+    "automatización de procesos para Pymes",
+    "software de automatización contable",
+    "transformación digital Pymes Colombia",
+    "automatización IA llave en mano",
+    "automatización procesos contables",
+    "ahorro de horas hombre",
   ],
 };
 
@@ -47,6 +46,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="es"
+      data-scroll-behavior="smooth"
       className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
