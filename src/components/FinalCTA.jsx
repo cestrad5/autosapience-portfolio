@@ -1,4 +1,10 @@
-import { CheckCircle2, Mail } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
+
+const WHATSAPP_NUMBER = '573127270035';
+const WHATSAPP_MESSAGE = encodeURIComponent(
+  'Hola, quiero agendar mi Diagnóstico Operativo Gratuito con AutoSapience. Mi empresa es: '
+);
 
 const bullets = [
   'Auditoría rápida de sus procesos actuales',
@@ -50,70 +56,37 @@ export default function FinalCTA() {
           </div>
 
           <div
-            className="rounded-xl p-6 space-y-4"
+            className="rounded-xl p-6 sm:p-8 space-y-5 flex flex-col items-center text-center"
             style={{ background: 'rgba(7,12,23,0.6)', border: '1px solid rgba(255,255,255,0.07)' }}
           >
-            <p className="text-sm font-semibold text-[#f1f5f9] mb-2" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
-              Cuéntenos sobre su empresa
-            </p>
-
-            <form
-              action="https://formsubmit.co/cestrad5@gmail.com"
-              method="POST"
-              className="space-y-3"
-              aria-label="Formulario de solicitud de diagnóstico"
+            <div
+              className="w-14 h-14 rounded-full flex items-center justify-center"
+              style={{ background: 'rgba(37,211,102,0.1)', border: '1px solid rgba(37,211,102,0.3)' }}
+              aria-hidden="true"
             >
-              <input type="hidden" name="_subject" value="🚀 Nueva solicitud de diagnóstico: AutoSapience!" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="box" />
-              <input type="hidden" name="_next" value="https://autosapience.com" />
+              <FaWhatsapp size={26} style={{ color: '#25D366' }} />
+            </div>
+            <div className="space-y-1.5">
+              <p className="text-sm font-semibold text-[#f1f5f9]" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                Hablemos por WhatsApp
+              </p>
+              <p className="text-sm text-[#94a3b8] leading-relaxed">
+                Cuéntenos sobre su empresa y agendamos su diagnóstico gratuito directamente en el chat.
+              </p>
+            </div>
 
-              <div>
-                <label htmlFor="contact-name" className="block text-xs text-[#94a3b8] mb-1.5">
-                  Su nombre *
-                </label>
-                <input id="contact-name" name="nombre" type="text" required placeholder="Camilo Estrada" className="pilot-input" />
-              </div>
-              <div>
-                <label htmlFor="contact-company" className="block text-xs text-[#94a3b8] mb-1.5">
-                  Empresa *
-                </label>
-                <input id="contact-company" name="empresa" type="text" required placeholder="Nombre de su empresa" className="pilot-input" />
-              </div>
-              <div>
-                <label htmlFor="contact-role" className="block text-xs text-[#94a3b8] mb-1.5">
-                  Cargo *
-                </label>
-                <input id="contact-role" name="cargo" type="text" required placeholder="Gerente, propietario..." className="pilot-input" />
-              </div>
-              <div>
-                <label htmlFor="contact-whatsapp" className="block text-xs text-[#94a3b8] mb-1.5">
-                  WhatsApp *
-                </label>
-                <input id="contact-whatsapp" name="whatsapp" type="tel" required placeholder="+57 300 000 0000" className="pilot-input" />
-              </div>
-              <div>
-                <label htmlFor="contact-pain" className="block text-xs text-[#94a3b8] mb-1.5">
-                  ¿Qué proceso manual le quita más tiempo hoy? *
-                </label>
-                <textarea
-                  id="contact-pain"
-                  name="proceso_manual"
-                  rows={3}
-                  required
-                  placeholder="Describa brevemente el proceso que más tiempo le consume..."
-                  className="pilot-input resize-none"
-                />
-              </div>
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-full justify-center"
+            >
+              <FaWhatsapp size={16} />
+              Solicitar Análisis de ROI para mi Empresa
+            </a>
 
-              <button type="submit" className="btn-primary w-full justify-center mt-2">
-                <Mail size={15} />
-                Solicitar Análisis de ROI para mi Empresa
-              </button>
-            </form>
-
-            <p className="text-xs text-center text-[#64748b] pt-1">
-              Le respondemos en menos de 24 horas. Sin spam.
+            <p className="text-xs text-[#64748b]">
+              Le respondemos en menos de 24 horas.
             </p>
           </div>
         </div>
