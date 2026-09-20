@@ -21,7 +21,7 @@ export default function BusinessModel() {
     <section id="modelo" className="py-24 sm:py-32 space-y-12">
       <div className="space-y-3 max-w-xl">
         <div className="section-divider" aria-hidden="true" />
-        <p className="text-xs uppercase tracking-widest text-[#94a3b8]" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+        <p className="text-xs uppercase tracking-widest text-text-400" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
           Nuestro modelo
         </p>
         <h2
@@ -53,13 +53,13 @@ export default function BusinessModel() {
               <h3 className="text-base" style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 600, color: '#f1f5f9' }}>
                 {st.title}
               </h3>
-              <p className="text-sm text-[#94a3b8] leading-relaxed">{st.body}</p>
+              <p className="text-sm text-text-400 leading-relaxed">{st.body}</p>
             </div>
           </div>
         ))}
       </div>
 
-      <p className="text-sm text-[#64748b] max-w-xl">
+      <p className="text-sm text-text-500 max-w-xl">
         Sin cifras genéricas: calculamos el retorno de inversión específico de su empresa durante el diagnóstico gratuito.
       </p>
     </section>

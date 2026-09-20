@@ -1,5 +1,6 @@
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
+import { whatsappLink } from "@/lib/site-config";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -25,12 +26,14 @@ export const metadata = {
     type: "website",
     url: "https://autosapience.com",
     siteName: "AutoSapience",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AutoSapience" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AutoSapience — Automatización de procesos llave en mano para Pymes",
     description:
       "Automatización de procesos con IA, llave en mano, para Pymes colombianas.",
+    images: ["/og-image.png"],
   },
   keywords: [
     "automatización de procesos para Pymes",
@@ -51,8 +54,8 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         {children}
-        <a 
-          href="https://wa.me/573127270035?text=Hola,%20estoy%20en%20autosapience.com%20y%20quiero%20preguntar%20algo"
+        <a
+          href={whatsappLink('Hola, estoy en autosapience.com y quiero preguntar algo')}
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366]"

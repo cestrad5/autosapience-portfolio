@@ -11,7 +11,7 @@ export default function Advantage() {
     <section id="solucion" className="py-24 sm:py-32 space-y-14">
       <div className="max-w-2xl space-y-4">
         <div className="section-divider" aria-hidden="true" />
-        <p className="text-xs uppercase tracking-widest text-[#94a3b8]" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+        <p className="text-xs uppercase tracking-widest text-text-400" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
           Nuestra ventaja
         </p>
         <h2
@@ -20,7 +20,7 @@ export default function Advantage() {
         >
           No le vendemos un software; le entregamos sus procesos automatizados.
         </h2>
-        <p className="text-[#94a3b8] text-base leading-relaxed">
+        <p className="text-text-400 text-base leading-relaxed">
           A diferencia de las plataformas tradicionales que obligan a su equipo a aprender a usarlas, nosotros nos encargamos de todo. Desde el diseño hasta la implementación directa, su empresa queda funcionando desde el día uno.
         </p>
       </div>
@@ -38,7 +38,7 @@ export default function Advantage() {
             <h3 className="text-lg" style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 600, color: '#f1f5f9' }}>
               {a.title}
             </h3>
-            <p className="text-sm text-[#94a3b8] leading-relaxed">{a.body}</p>
+            <p className="text-sm text-text-400 leading-relaxed">{a.body}</p>
           </div>
         ))}
       </div>

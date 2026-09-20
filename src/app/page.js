@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#070c17] text-[#cbd5e1] relative overflow-hidden bg-noise">
+    <div className="min-h-screen bg-navy-950 text-text-300 relative overflow-hidden bg-noise">
 
       <div className="fixed inset-0 pointer-events-none" aria-hidden="true">
         <div className="orb orb-amber" style={{ width: '700px', height: '700px', top: '-250px', right: '-200px' }} />

@@ -1,10 +1,8 @@
 import { CheckCircle2 } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
+import { whatsappLink } from '@/lib/site-config';
 
-const WHATSAPP_NUMBER = '573127270035';
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  'Hola, quiero agendar mi Diagnóstico Operativo Gratuito con AutoSapience. Mi empresa es: '
-);
+const WHATSAPP_MESSAGE = 'Hola, quiero agendar mi Diagnóstico Operativo Gratuito con AutoSapience. Mi empresa es: ';
 
 const bullets = [
   'Auditoría rápida de sus procesos actuales',
@@ -32,8 +30,8 @@ export default function FinalCTA() {
         <div className="relative z-10 grid sm:grid-cols-2 gap-10 items-start">
           <div className="space-y-5">
             <div>
-              <p className="text-xs uppercase tracking-widest text-[#f59e0b] mb-3" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
-                Diagnóstico gratuito — cupos limitados
+              <p className="text-xs uppercase tracking-widest text-amber-400 mb-3" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+                Diagnóstico gratuito — respuesta en 24 horas
               </p>
               <h2
                 className="text-3xl sm:text-4xl"
@@ -42,12 +40,12 @@ export default function FinalCTA() {
                 ¿Listo para eliminar el caos manual de su operación?
               </h2>
             </div>
-            <p className="text-[#94a3b8] leading-relaxed">
+            <p className="text-text-400 leading-relaxed">
               El costo de apagar un flujo automatizado es volver al trabajo manual. Empiece hoy y descubra cuántas horas hombre puede ahorrar su empresa cada mes.
             </p>
             <ul className="space-y-2">
               {bullets.map((b) => (
-                <li key={b} className="flex items-center gap-2.5 text-sm text-[#cbd5e1]">
+                <li key={b} className="flex items-center gap-2.5 text-sm text-text-300">
                   <CheckCircle2 size={15} style={{ color: '#f59e0b', flexShrink: 0 }} aria-hidden="true" />
                   {b}
                 </li>
@@ -67,16 +65,16 @@ export default function FinalCTA() {
               <FaWhatsapp size={26} style={{ color: '#25D366' }} />
             </div>
             <div className="space-y-1.5">
-              <p className="text-sm font-semibold text-[#f1f5f9]" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+              <p className="text-sm font-semibold text-text-100" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
                 Hablemos por WhatsApp
               </p>
-              <p className="text-sm text-[#94a3b8] leading-relaxed">
+              <p className="text-sm text-text-400 leading-relaxed">
                 Cuéntenos sobre su empresa y agendamos su diagnóstico gratuito directamente en el chat.
               </p>
             </div>
 
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+              href={whatsappLink(WHATSAPP_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary w-full justify-center"
@@ -85,7 +83,7 @@ export default function FinalCTA() {
               Solicitar Análisis de ROI para mi Empresa
             </a>
 
-            <p className="text-xs text-[#64748b]">
+            <p className="text-xs text-text-500">
               Le respondemos en menos de 24 horas.
             </p>
           </div>

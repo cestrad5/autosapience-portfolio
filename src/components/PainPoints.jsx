@@ -20,7 +20,7 @@ export default function PainPoints() {
     <section id="problema" className="py-24 sm:py-32 space-y-12">
       <div className="space-y-3">
         <div className="section-divider" aria-hidden="true" />
-        <p className="text-xs uppercase tracking-widest text-[#94a3b8]" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+        <p className="text-xs uppercase tracking-widest text-text-400" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
           Lo que sufre su empresa hoy
         </p>
         <h2
@@ -44,7 +44,7 @@ export default function PainPoints() {
             <h3 className="text-base" style={{ fontFamily: 'var(--font-space-grotesk)', fontWeight: 600, color: '#f1f5f9' }}>
               {p.title}
             </h3>
-            <p className="text-sm text-[#94a3b8] leading-relaxed">{p.body}</p>
+            <p className="text-sm text-text-400 leading-relaxed">{p.body}</p>
           </div>
         ))}
       </div>

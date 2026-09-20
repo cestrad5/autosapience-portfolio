@@ -58,7 +58,7 @@ export default function SegmentTabs() {
     <section id="segmentos" className="py-24 sm:py-32 space-y-12">
       <div className="space-y-3">
         <div className="section-divider" aria-hidden="true" />
-        <p className="text-xs uppercase tracking-widest text-[#94a3b8]" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
+        <p className="text-xs uppercase tracking-widest text-text-400" style={{ fontFamily: 'var(--font-space-grotesk)' }}>
           Para quién trabajamos
         </p>
         <h2
@@ -88,8 +88,8 @@ export default function SegmentTabs() {
               onClick={() => setActiveId(s.id)}
               className={`flex-1 sm:flex-none w-full sm:w-auto flex items-center justify-center sm:justify-start gap-2 px-5 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                 s.id === activeId
-                  ? 'bg-[#f59e0b] text-[#070c17]'
-                  : 'glass-card text-[#94a3b8] hover:text-[#f1f5f9]'
+                  ? 'bg-amber-400 text-navy-950'
+                  : 'glass-card text-text-400 hover:text-text-100'
               }`}
               style={{ fontFamily: 'var(--font-space-grotesk)' }}
             >
@@ -106,7 +106,7 @@ export default function SegmentTabs() {
           tabIndex={0}
           className="glass-card rounded-xl p-7 sm:p-10 mt-4"
         >
-          <p className="text-lg sm:text-xl leading-relaxed text-[#e2e8f0]">{active.body}</p>
+          <p className="text-lg sm:text-xl leading-relaxed text-text-200">{active.body}</p>
         </div>
       </div>
     </section>
